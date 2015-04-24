@@ -1,0 +1,9 @@
+This is a simple audio test app.
+
+Open index.html in Firefox.
+Or install the webapp with WebIDE on Firefox OS.
+
+This is to track a bug.
+
+In test.js adjust audiofile1 and audiofile2 to point
+to the two MP3 files you'll add in this directory.
