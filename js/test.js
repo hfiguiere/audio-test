@@ -19,6 +19,8 @@ var eventHandler = {
 
   clickHandler: function (audiofile) {
     var url = new URL(audiofile, window.location);
+
+    document.getElementById("audio-source").textContent = url;
     // Reset src before we set a new source to the audio element
     this.audio.removeAttribute('src');
     this.audio.load();
