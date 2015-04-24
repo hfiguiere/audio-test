@@ -11,6 +11,8 @@ var eventHandler = {
     case 'timeupdate':
       document.getElementById("duration").textContent =
         'Duration: ' + this.audio.duration;
+      document.getElementById("current").textContent =
+        'Current position: ' + this.audio.currentTime;
       break;
     }
   },
@@ -27,17 +29,24 @@ var eventHandler = {
 
     this.audio.play();
     this.audio.onloadeddata = function(evt) { URL.revokeObjectURL(url); };
+  },
+
+  stopHandler: function () {
+    this.audio.removeAttribute('src');
+    this.audio.load();
   }
 };
 
 var audiofile1 = "01 Cluster One.mp3";
-var audiofile2 = "02 What Do You Want From Me.mp3"
+var audiofile2 = "02 What Do You Want From Me.mp3";
 
 var button1 = document.querySelector("#load-button1");
 var button2 = document.querySelector("#load-button2");
+var stopButton = document.querySelector("#stop-button");
 
 eventHandler.audio.addEventListener('durationchange', eventHandler);
 eventHandler.audio.addEventListener('timeupdate', eventHandler);
 
 button1.onclick = eventHandler.clickHandler.bind(eventHandler, audiofile1);
 button2.onclick = eventHandler.clickHandler.bind(eventHandler, audiofile2);
+stopButton.onclick = eventHandler.stopHandler.bind(eventHandler);
