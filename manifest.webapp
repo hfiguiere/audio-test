@@ -1,0 +1,16 @@
+{
+  "name": "Audio test",
+  "description": "Audio test app",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "The Gaia Team"
+  },
+  "permissions": {
+    "themeable":{}
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "128": "/images/foxfooding_128.png"
+  },
+  "orientation": "default"
+}
